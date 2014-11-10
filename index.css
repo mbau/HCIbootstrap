@@ -1,9 +1,18 @@
 .jumbotron {
-  background-image: url("images/background2.jpg");
-  background-size: 100% 100%;
+  background-image: url("images/background4.jpg");
+  /*background-size: 100% 100%;*/
   background-repeat: no-repeat;
   color: white;
   text-align: center;
+  display: block;
+  /*max-width:230px;
+  max-height:1000px;
+  width: auto;
+  height: auto;*/
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 body {
