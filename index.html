@@ -10,8 +10,9 @@
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="index.css" rel="stylesheet">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type='text/javascript' src='script.js'></script>
+
+
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -60,15 +61,15 @@
         <form class="form-inline" role="form"> <!-- action="schedule.html"> -->
           <div class="form-group">
             <label class="sr-only" for="exampleInputEmail2">Email address</label>
-            <input type="text" class="form-control" autocomplete="off" placeholder="From" name="origin">
+            <input type="text" id="tags" class="form-control" placeholder="From" name="origin">
           </div>
           <div class="form-group">
             <label class="sr-only" for="exampleInputPassword2">Password</label>
-            <input type="text" class="form-control" autocomplete="off" placeholder="To" name="destination">
+            <input type="text" id="tags" class="form-control" placeholder="To" name="destination">
           </div>
           <div class="form-group">
             <label class="sr-only" for="exampleInputPassword2">Date</label>
-            <input type="text" class="form-control" autocomplete="off" placeholder="Date" name="date">
+            <input type="text" id="datepicker" class="form-control" placeholder="Date" name="date">
           </div>
         </form>
         <p>
@@ -131,9 +132,42 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/typeahead.js"></script>
+
+    <script type='text/javascript' src='script.js'></script>
+
+    <script>
+    $(document).ready(function() {
+      $(function() {
+        var availableTags = [
+          "Highland, Indiana",
+          "Indianapolis, Indiana",
+          "Michigan City, Indiana",
+          "Notre Dame, Indiana",
+          "Portage, Indiana",
+          "South Bend Airport, Indiana",
+          "Champaign, Illinois",
+          "Chicago, Illinois",
+          "Chicago Midway Airport, Illinois",
+          "Chicago O'Hare Airport, Illinois",
+          "Crestwood, Illinois",
+          "Rockford, Illinois",
+          "South Beloit, Illinois"
+        ];
+        $("#tags").autocomplete({
+          source: availableTags
+        });
+      });
+      $(function() {
+        $("#datepicker").datepicker();
+      });
+    });
+    </script>
+
   </body>
 </html>
