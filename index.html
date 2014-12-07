@@ -40,12 +40,31 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="signin.html">Log In</a></li>
             <li><a href="#">Scheduled Services</a></li>
             <li><a href="#">City Sightseeing</a></li>
             <li><a href="#">Tour Services</a></li>
             <li><a href="#">Charter Services</a></li>
           </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown" id="menuLogin">
+              <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">Log In</a>
+              <div id="menuchange" class="dropdown-menu" style="padding:17px;">
+                <form class="form-signin" role="form" action="tickets.html">
+                  <h2 class="form-signin-heading">Please Sign In</h2>
+                  <input type="email" class="form-control" placeholder="Email address" required autofocus>
+                  <input type="password" class="form-control" placeholder="Password" required>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value="remember-me"> Remember Me
+                    </label>
+                  </div>
+                  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                </form>
+              </div>
+            </li>
+          </ul>
+
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
