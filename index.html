@@ -61,11 +61,11 @@
         <form class="form-inline" role="form"> <!-- action="schedule.html"> -->
           <div class="form-group">
             <label class="sr-only" for="exampleInputEmail2">Email address</label>
-            <input type="text" id="tags" class="form-control" placeholder="From" name="origin">
+            <input type="text" id="fromtags" class="form-control" placeholder="From" name="origin">
           </div>
           <div class="form-group">
             <label class="sr-only" for="exampleInputPassword2">Password</label>
-            <input type="text" id="tags" class="form-control" placeholder="To" name="destination">
+            <input type="text" id="totags" class="form-control" placeholder="To" name="destination">
           </div>
           <div class="form-group">
             <label class="sr-only" for="exampleInputPassword2">Date</label>
@@ -146,7 +146,7 @@
     <script>
     $(document).ready(function() {
       $(function() {
-        var availableTags = [
+        var toTags = [
           "Highland, Indiana",
           "Indianapolis, Indiana",
           "Michigan City, Indiana",
@@ -161,8 +161,28 @@
           "Rockford, Illinois",
           "South Beloit, Illinois"
         ];
-        $("#tags").autocomplete({
-          source: availableTags
+        $("#totags").autocomplete({
+          source: toTags
+        });
+      });
+      $(function() {
+        var fromTags = [
+          "Highland, Indiana",
+          "Indianapolis, Indiana",
+          "Michigan City, Indiana",
+          "Notre Dame, Indiana",
+          "Portage, Indiana",
+          "South Bend Airport, Indiana",
+          "Champaign, Illinois",
+          "Chicago, Illinois",
+          "Chicago Midway Airport, Illinois",
+          "Chicago O'Hare Airport, Illinois",
+          "Crestwood, Illinois",
+          "Rockford, Illinois",
+          "South Beloit, Illinois"
+        ];
+        $("#fromtags").autocomplete({
+          source: fromTags
         });
       });
       $(function() {
