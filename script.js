@@ -26,6 +26,7 @@ $(document).ready(function() {
         $('#depart_time_viewer6').replaceWith('<td id="depart_time_viewer6">4:10 PM</td>');
         $('#arrive_time_viewer6').replaceWith('<td id="arrive_time_viewer6">6:10 PM</td>');
 
+				//$('#buy_button').replaceWith('<a id="buy_button" class="btn btn-primary btn-lg" role="button" align="center">Buy Tickets Starting at $41</a>');
     });
 	
 	$('#buy_button').click(function() {
@@ -33,6 +34,6 @@ $(document).ready(function() {
         var destination = $('input[name=destination]').val();
         var date = $('input[name=date]').val();	
 				var url = "checkout.html?origin=" +origin+ "&destination=" +destination+ "&date=" +date;
-        myWindow = window.open(url, '_blank');
+        myWindow = window.open(url, '_self');
 	});
 });
