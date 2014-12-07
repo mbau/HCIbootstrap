@@ -100,24 +100,34 @@
           <input type="text" id="datepicker" class="form-control" name="date">
         </div>
       </div>
-      <div class="form-group radio">
-        <label class="col-sm-3 control-label">
-          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-          One Way
-        </label>
-      </div>
-      <div class="form-group radio">
-        <label class="col-sm-3 control-label">
-          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-          Round Trip
-        </label>
-      </div>
+
+
       <div class="form-group">
-        <label class="col-sm-3 control-label" for="date">Return Date</label>
+        <label class="col-sm-3 control-label" for="date">Select One</label>
         <div class="col-sm-9">
-          <input type="text" id="datepicker2" class="form-control" name="date">
+          <label class="col-sm-3 control-label" style="font-weight: normal;">
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" onclick="hideDate()" checked></input>
+            One Way
+          </label>
+          <label class="col-sm-3 control-label" style="font-weight: normal;">
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" onclick="showDate()"></input>
+            Round Trip
+          </label>
         </div>
       </div>
+
+      
+      <div class="form-group" id="returnDate" style="display:none;">
+        <label class="col-sm-3 control-label" for="date">Return Date</label>
+        <div class="col-sm-9">
+<<<<<<< HEAD
+          <input type="text" id="datepicker2" class="form-control" name="date">
+=======
+          <input type="text" id="datepicker" class="form-control" name="date">
+>>>>>>> gh-pages
+        </div>
+      </div>
+
 			<div class="form-group">
         <label class="col-sm-3 control-label" for="date">Adults</label>
         <div class="col-sm-9">
@@ -147,7 +157,7 @@
 			<div class="form-group">
         <label class="col-sm-3 control-label" for="destination">Password</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="password" id="password">
+          <input type="password" class="form-control" name="password" id="password">
         </div>
       </div>
     </fieldset>
@@ -274,10 +284,32 @@
         $("#datepicker").datepicker();
       });
       $(function() {
+<<<<<<< HEAD
         $("#datepicker2").datepicker();
+=======
+        if( document.getElementById("optionsRadios2").checked == true;) {
+          ('#returnDate').replaceWith(
+            '<div class="form-group" id="returnDate">
+              <label class="col-sm-3 control-label" for="date">Return Date</label>
+              <div class="col-sm-9">
+                <input type="text" id="datepicker" class="form-control" name="date">
+              </div>
+            </div>'
+          );
+        }
+>>>>>>> gh-pages
       });
     });
     </script>
+
+  <script type="text/javascript">
+  function showDate() {
+    document.getElementById('returnDate').style.display = "block";
+  }
+  function hideDate() {
+    document.getElementById('returnDate').style.display = "none";
+  }
+  </script>
 
 
   </body>
