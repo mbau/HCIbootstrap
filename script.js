@@ -36,4 +36,8 @@ $(document).ready(function() {
 				var url = "checkout.html?origin=" +origin+ "&destination=" +destination+ "&date=" +date;
         myWindow = window.open(url, '_self');
 	});
+	
+//	function getURLParameter(name) {
+ // return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null}
+	
 });
