@@ -46,7 +46,7 @@ $(document).ready(function() {
 	
 	console.log(getParameterByName('origin'))
 	
-	$('#originInput').val(getParameterByName('origin'));
-	$('#destinationInput').val(getParameterByName('destination'));
-	$('#dateInput').val(getParameterByName('date'));
+	$('#fromtags').val(getParameterByName('origin'));
+	$('#totags').val(getParameterByName('destination'));
+	$('#datepicker').val(getParameterByName('date'));
 });
