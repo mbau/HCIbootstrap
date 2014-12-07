@@ -25,5 +25,15 @@ $(document).ready(function() {
 
         $('#depart_time_viewer6').replaceWith('<td id="depart_time_viewer6">4:10 PM</td>');
         $('#arrive_time_viewer6').replaceWith('<td id="arrive_time_viewer6">6:10 PM</td>');
+		
+				$('#buy_now').replaceWith('<a class="btn btn-primary btn-lg" role="button" id="buy_button" align="center">Buy Tickets Starting at $41</a></br></br>');
     });
+	
+	$('#buy_button').click(function() {
+        var origin = $('input[name=origin]').val();
+        var destination = $('input[name=destination]').val();
+        var date = $('input[name=date]').val();	
+				var url = "checkout.html?origin=" +origin+ "&destination=" +destination+ "&date=" +date;
+        myWindow = window.open(url, '_blank');
+	});
 });
