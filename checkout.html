@@ -85,19 +85,19 @@
       <div class="form-group">
         <label class="col-sm-3 control-label" for="origin">Origin</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="origin" id="originInput">
+          <input type="text" id="fromtags" class="form-control" name="origin" id="originInput">
         </div>
       </div>
 			<div class="form-group">
         <label class="col-sm-3 control-label" for="destination">Destination</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="destination" id="destinationInput">
+          <input type="text" id="totags" class="form-control" name="destination" id="destinationInput">
         </div>
       </div>
 			<div class="form-group">
         <label class="col-sm-3 control-label" for="date">Departure Date</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="date" id="destinationDateInput">
+          <input type="text" id="datepicker" class="form-control" name="date" id="destinationDateInput">
         </div>
       </div>
       <div class="form-group radio">
@@ -223,8 +223,59 @@
   </form>
 </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src='script.js'></script>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+
+    <script>
+    $(document).ready(function() {
+      $(function() {
+        var toTags = [
+          "Highland, Indiana",
+          "Indianapolis, Indiana",
+          "Michigan City, Indiana",
+          "Notre Dame, Indiana",
+          "Portage, Indiana",
+          "South Bend Airport, Indiana",
+          "Champaign, Illinois",
+          "Chicago, Illinois",
+          "Chicago Midway Airport, Illinois",
+          "Chicago O'Hare Airport, Illinois",
+          "Crestwood, Illinois",
+          "Rockford, Illinois",
+          "South Beloit, Illinois"
+        ];
+        $("#totags").autocomplete({
+          source: toTags
+        });
+      });
+      $(function() {
+        var fromTags = [
+          "Highland, Indiana",
+          "Indianapolis, Indiana",
+          "Michigan City, Indiana",
+          "Notre Dame, Indiana",
+          "Portage, Indiana",
+          "South Bend Airport, Indiana",
+          "Champaign, Illinois",
+          "Chicago, Illinois",
+          "Chicago Midway Airport, Illinois",
+          "Chicago O'Hare Airport, Illinois",
+          "Crestwood, Illinois",
+          "Rockford, Illinois",
+          "South Beloit, Illinois"
+        ];
+        $("#fromtags").autocomplete({
+          source: fromTags
+        });
+      });
+      $(function() {
+        $("#datepicker").datepicker();
+      });
+    });
+    </script>
+
+
   </body>
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src='script.js'></script>
 </html>
