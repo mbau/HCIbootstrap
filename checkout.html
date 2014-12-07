@@ -8,13 +8,13 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Signin Template for Bootstrap</title>
+    <title>Checkout</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
+    <link href="checkout.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -30,7 +30,6 @@
   </head>
 
   <body>
-
     <nav class="navbar navbar-default" role="navigation">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -49,12 +48,31 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="signin.html">Log In</a></li>
             <li><a href="#">Scheduled Services</a></li>
             <li><a href="#">City Sightseeing</a></li>
             <li><a href="#">Tour Services</a></li>
             <li><a href="#">Charter Services</a></li>
           </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown" id="menuLogin">
+              <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">Log In</a>
+              <div id="menuchange" class="dropdown-menu" style="padding:17px;">
+                <form class="form-signin" role="form" action="tickets.html">
+                  <h2 class="form-signin-heading">Please Sign In</h2>
+                  <input type="email" class="form-control" placeholder="Email address" required autofocus>
+                  <input type="password" class="form-control" placeholder="Password" required>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value="remember-me"> Remember Me
+                    </label>
+                  </div>
+                  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                </form>
+              </div>
+            </li>
+          </ul>
+
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
@@ -79,7 +97,25 @@
 			<div class="form-group">
         <label class="col-sm-3 control-label" for="date">Departure Date</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" name="date" id="dateInput">
+          <input type="text" class="form-control" name="date" id="destinationDateInput">
+        </div>
+      </div>
+      <div class="form-group radio">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+          One Way
+        </label>
+      </div>
+      <div class="form-group radio">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+          Round Trip
+        </label>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label" for="date">Return Date</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" name="date" id="returnDateInput">
         </div>
       </div>
 			<div class="form-group">
