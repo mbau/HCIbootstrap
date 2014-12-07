@@ -1,3 +1,10 @@
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
 $(document).ready(function() {
 	$('#set_schedule').click(function() {
         var toAddOrigin = $('input[name=origin]').val();
@@ -37,7 +44,9 @@ $(document).ready(function() {
         myWindow = window.open(url, '_self');
 	});
 	
-//	function getURLParameter(name) {
- // return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null}
+	console.log(getParameterByName('origin'))
 	
+	$('#originInput').val(getParameterByName('origin'));
+	$('#destinationInput').val(getParameterByName('destination'));
+	$('#dateInput').val(getParameterByName('date'));
 });
